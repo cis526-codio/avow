@@ -1,5 +1,5 @@
 {
-  "name": "web-grading-utils",
+  "name": "avow",
   "version": "1.0.0",
   "description": "A helper library for grading HTML/CSS/JavaScript assignments in Codio",
   "main": "index.js",
