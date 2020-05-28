@@ -1,0 +1,15 @@
+{
+  "name": "web-grading-utils",
+  "version": "1.0.0",
+  "description": "A helper library for grading HTML/CSS/JavaScript assignments in Codio",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nathan H. Bean",
+  "license": "MIT",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.3",
+    "css": "^2.2.4"
+  }
+}
