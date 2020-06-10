@@ -7,7 +7,7 @@ const markdown = require('markdown').markdown;
  * @returns {string} the HTML snippet
 */
 function formatString(input) {
-    return markdown.toHTML(escape(input.toString()));
+    return markdown.toHTML(input.toString());
 }
 
 module.exports = formatString;
