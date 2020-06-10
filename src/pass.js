@@ -4,7 +4,7 @@
  * @returns {string} the HTML snippet
 */
 function pass(feedback) {
-    var fbItems = feeback.map(fb => `<li>${fb}</li>`).join('\n');
+    var fbItems = feedback.map(fb => `<li>${fb}</li>`).join('\n');
     process.stdout.write(`Good work!\n`);
     process.stdout.write(`<ul>\n${fb}\n</ul>`);
     process.exit(0);
