@@ -1,4 +1,4 @@
-const escape = require('escape-html');
+const formatString = require('./format-string');
 
 /** @function formatList
  * Formats a list of strings into an unordered html list
@@ -6,7 +6,7 @@ const escape = require('escape-html');
  * @returns {string} the HTML snippet
 */
 function formatList(items) {
-    var itemHTML = items.map(item => `<li>${escape(item)}</li>`).join('\n');
+    var itemHTML = items.map(item => `<li>${formatString(item)}</li>`).join('\n');
     return `<ul>\n${itemHTML}\n</ul>`;
 }
 

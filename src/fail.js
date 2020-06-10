@@ -1,4 +1,4 @@
-const escape = require('escape-html');
+const formatString = require('./format-string');
 const formatList = require("./format-list");
 
 /** @function fail
@@ -12,7 +12,7 @@ function fail(feedback) {
         process.stdout.write(`<ul>\n${formatList(feedback)}\n</ul>`);
     } else if(feedback) {
         process.stdout.write(`You need to fix the following issue:`);
-        process.stdout.write(escape(feedback.toString()));
+        process.stdout.write(formatString(feedback));
     } 
     process.exit(1);
 }
