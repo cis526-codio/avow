@@ -1,12 +1,17 @@
+const formatList = require("./format-list");
+
 /** @function pass
  * Prints a pass statement and any feedback
- * @param {string[]} feedback - the feedback to report 
+ * @param {string[]|string} feedback - the feedback to report 
  * @returns {string} the HTML snippet
 */
 function pass(feedback) {
-    var fbItems = feedback.map(fb => `<li>${fb}</li>`).join('\n');
     process.stdout.write(`Good work!\n`);
-    process.stdout.write(`<ul>\n${fbItems}\n</ul>`);
+    if(Array.isArray(feedback)) {
+        process.stdout.write(`<ul>\n${formatList(feedback)}\n</ul>`);
+    } else if(feedback) {
+        process.stdout.write(feedback.toString());
+    }
     process.exit(0);
 }
 
