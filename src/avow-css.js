@@ -97,13 +97,13 @@ function checkCSS(expected, actual) {
  */
 function loadCSS(filepath) {  
     if(fs.existsSync(filepath)) {
-        switch(path.extname(path)) {
+         switch(path.extname(filepath)) {
             case '.css':
-                return css.parse(strip(fs.loadFileSync(filepath), {source: filepath}, {preserve: false}));
+                return css.parse(strip(fs.readFileSync(filepath, {encoding: 'utf-8'}), {source: filepath}, {preserve: false}));
             case 'html':
             case 'htm':
                 var style_content = "";
-                var $ = cheerio.load(fs.loadFileSync(filepath));
+                var $ = cheerio.load(fs.readFileSync(filepath, {encoding: 'utf-8'}));
                 $("style").each(function(){
                     style_content += $(this).text();
                 });
