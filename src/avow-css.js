@@ -82,7 +82,7 @@ function checkCSS(expected, actual) {
             // iterate through all expected declarations
             rule.declarations.forEach(declaration => {
                 if(!declarations.find(dec2 => compareDeclarations(declaration, dec2))) {
-                    issues.push(`Expected to find a declaration <code>${declaration.property}: ${declaration.value}</code> for selector <code>${selector}</code>`);
+                    issues.push(`Expected to find a declaration \`${declaration.property}: ${declaration.value}\` for selector \`${selector}\``);
                 }
             });
         });
