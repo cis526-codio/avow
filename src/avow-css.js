@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const css = require('css');
+const strip = require('strip-css-comments');
 const cheerio = require('cheerio');
 
 /** Notes
@@ -98,7 +99,7 @@ function loadCSS(filepath) {
     if(fs.existsSync(filepath)) {
         switch(path.extname(path)) {
             case '.css':
-                return css.parse(fs.loadFileSync(filepath, {source: filepath}));
+                return css.parse(strip(fs.loadFileSync(filepath, {source: filepath}), {preserve: false}));
             case 'html':
             case 'htm':
                 var style_content = "";
@@ -107,11 +108,11 @@ function loadCSS(filepath) {
                     style_content += $(this).text();
                 });
                 // TODO: Load <link> element references
-                return css.parse(style_content);
+                return css.parse(strip(style_content, {preserve: false}));
         }
     } else {
         // filepath may be a css string
-        return css.parse(filepath);
+        return css.parse(strip(filepath, {preserve: false}));
     }
 }
 
