@@ -10,7 +10,7 @@ function pass(feedback) {
     if(Array.isArray(feedback)) {
         process.stdout.write(`<ul>\n${formatList(feedback)}\n</ul>`);
     } else if(feedback) {
-        process.stdout.write(feedback.toString());
+        process.stdout.write(escape(feedback.toString()));
     }
     process.exit(0);
 }

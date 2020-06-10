@@ -1,3 +1,4 @@
+const escape = require('escape-html');
 const formatList = require("./format-list");
 
 /** @function fail
@@ -11,7 +12,7 @@ function fail(feedback) {
         process.stdout.write(`<ul>\n${formatList(feedback)}\n</ul>`);
     } else if(feedback) {
         process.stdout.write(`You need to fix the following issue:`);
-        process.stdout.write(feedback.toString());
+        process.stdout.write(escape(feedback.toString()));
     } 
     process.exit(1);
 }
