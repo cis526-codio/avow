@@ -124,7 +124,7 @@ function loadCSS(filepath) {
  * @returns {string[]} a list of html snippets corresponding to missing css
  */
 function avowCSS(expected, actual) {
-    return avowCSS(loadCSS(expected), loadCSS(actual));
+    return checkCSS(loadCSS(expected), loadCSS(actual));
 }
 
 

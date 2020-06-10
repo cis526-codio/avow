@@ -4,7 +4,7 @@
   "description": "A helper library for grading HTML/CSS/JavaScript assignments in Codio",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node ./test/css.test.js"
   },
   "author": "Nathan H. Bean",
   "license": "MIT",
