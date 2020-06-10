@@ -99,7 +99,7 @@ function loadCSS(filepath) {
     if(fs.existsSync(filepath)) {
         switch(path.extname(path)) {
             case '.css':
-                return css.parse(strip(fs.loadFileSync(filepath, {source: filepath}), {preserve: false}));
+                return css.parse(strip(fs.loadFileSync(filepath), {source: filepath}, {preserve: false}));
             case 'html':
             case 'htm':
                 var style_content = "";
