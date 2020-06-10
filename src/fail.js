@@ -6,7 +6,7 @@
 function fail(feedback) {
     var fbItems = feedback.map(fb => `<li>${fb}</li>`).join('\n');
     process.stdout.write(`You need to fix the following issues:\n`);
-    process.stdout.write(`<ul>\n${fb}\n</ul>`);
+    process.stdout.write(`<ul>\n${fbItems}\n</ul>`);
     process.exit(1);
 }
 
